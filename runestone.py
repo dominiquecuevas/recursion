@@ -66,3 +66,18 @@ def is_palindrome(string):
 
 print("is_palindrome('going'):", is_palindrome('going'))
 print("is_palindrome('kayak'):", is_palindrome('kayak'))
+
+def get_fibonacci_seq(length, fib=[0, 1]):
+    # base case, if length is reached return
+    # add numbers together, then append to sequence
+    # return list, append each new sum
+    if length < 1:
+        return
+    if length == 1:
+        return [0]
+    if len(fib) == length:
+        return fib
+    else:
+        return get_fibonacci_seq(length, fib + [fib[-2] + fib[-1]])
+
+print("get_fibonacci_seq(10):", get_fibonacci_seq(10))
