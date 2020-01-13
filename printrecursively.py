@@ -17,9 +17,12 @@ def print_recursively(lst):
     # return call self with smaller slice of list
     if not lst:
         return
-    print(lst[0])
-    return print_recursively(lst[1:])
-
+    zenith, remaining = lst[0], lst[1:]
+    if isinstance(zenith, list):
+        print_recursively(zenith)
+    else:
+        print(lst[0])
+    print_recursively(remaining)
 
 if __name__ == '__main__':
     import doctest
