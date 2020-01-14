@@ -19,9 +19,9 @@ def rev_string(astring):
 
     You may NOT use the reversed() function!
     """
-    # base case is empty list
-    if astring == "":
-        return ""
+    # base case is 1 character
+    if len(astring) < 2:
+        return astring
     return astring[-1] + rev_string(astring[:-1])
 
 
